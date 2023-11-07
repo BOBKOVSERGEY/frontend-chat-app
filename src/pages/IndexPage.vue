@@ -1,5 +1,6 @@
 <template>
   <q-page class="row items-center justify-evenly">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi architecto assumenda cupiditate exercitationem expedita ipsum itaque laboriosam, minus, molestias nesciunt nobis quia quis reiciendis rem repellat saepe sit suscipit, voluptatum.
     <example-component
       title="Example component"
       active

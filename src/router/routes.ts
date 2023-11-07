@@ -1,10 +1,43 @@
-import { RouteRecordRaw } from 'vue-router';
+  import { RouteRecordRaw } from 'vue-router';
 
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
-    children: [{ path: '', component: () => import('pages/IndexPage.vue') }],
+    children: [
+      {
+        path: 'rooms',
+        component: () => import('components/RoomList.vue'),
+        children: [
+          {
+            path: '',
+            component: () => import('components/ChooseRoom.vue'),
+          },
+          {
+            path: ':roomId/messages',
+            component: () => import('components/ChatWindow.vue'),
+          },
+        ],
+      },
+
+    ],
+
+  },
+  {
+    path: '/guest',
+    component: () => import('layouts/GuestLayout.vue'),
+    children: [
+      {
+        path: 'register',
+        name: 'Register',
+        component: () => import('pages/RegisterPage.vue')
+      },
+      {
+        path: 'login',
+        name: 'Login',
+        component: () => import('pages/LoginPage.vue')
+      },
+    ],
   },
 
   // Always leave this as last one,
