@@ -1,11 +1,6 @@
 <script setup lang="ts">
 
 </script>
-
 <template>
-  $END$
+  <div class="">Choose Room</div>
 </template>
-
-<style scoped>
-
-</style>
