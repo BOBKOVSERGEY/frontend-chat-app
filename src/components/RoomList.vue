@@ -22,13 +22,13 @@ const roomToUpdateId = ref<number>();
 const formatTime = (date: string) => {
   const newDate = new Date(date);
   return (
-    newDate.toLocaleTimeString('de-DE', {
+    newDate.toLocaleTimeString('ru-RU', {
       hour: 'numeric',
       minute: 'numeric',
       hour12: true,
     }) +
     ' ' +
-    newDate.toLocaleDateString('de-DE', {
+    newDate.toLocaleDateString('ru-RU', {
       day: 'numeric',
       month: 'short',
       year: 'numeric',
@@ -79,6 +79,7 @@ const deleteRoom = async (roomId: number) => {
     <div class="chat-room-list col-xs-12 col-md-4 col-lg-4">
       <div class="header text-h4 text-grey-9 q-my-md q-mx-md">
         Chat Rooms
+
         <q-btn
           dense
           flat
@@ -91,6 +92,7 @@ const deleteRoom = async (roomId: number) => {
           <q-icon name="add" />
         </q-btn>
       </div>
+
       <q-scroll-area :style="scrollAreaStyle">
         <q-list padding>
           <q-item
@@ -184,7 +186,28 @@ const deleteRoom = async (roomId: number) => {
         </q-list>
       </q-scroll-area>
     </div>
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+      <router-view />
+    </div>
   </div>
-  <RouterView/>
 </template>
+
+<style scoped>
+.overlapping {
+  border: 2px solid white;
+  position: absolute;
+}
+.chat-room-item {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
+.round-avatar {
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+}
+</style>
 

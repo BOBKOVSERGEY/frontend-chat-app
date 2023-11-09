@@ -1,5 +1,6 @@
 import { boot } from 'quasar/wrappers';
 import axios, { AxiosInstance } from 'axios';
+import {echo} from 'boot/echo';
 
 
 declare module '@vue/runtime-core' {
@@ -25,7 +26,7 @@ api.interceptors.request.use((config) => {
     config.headers.Authorization = `Bearer ${token}`;
   }
 
-  //config.headers['X-Socket-Id'] = echo.socketId()
+  config.headers['X-Socket-Id'] = echo.socketId()
   return config;
 })
 

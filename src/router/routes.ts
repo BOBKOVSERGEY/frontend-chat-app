@@ -14,6 +14,7 @@ const routes: RouteRecordRaw[] = [
             component: () => import('components/ChooseRoom.vue'),
           },
           {
+            name: 'ChatWindow',
             path: ':roomId/messages',
             component: () => import('components/ChatWindow.vue'),
           },
